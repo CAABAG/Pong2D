@@ -1,6 +1,6 @@
 #include "Ball.h"
 
-Ball::Ball() : m_XDir(BallDirectionX::NEG), m_YDir(BallDirectionY::NEUT), m_Speed(1.f)
+Ball::Ball() : m_XDir(BallDirectionX::NEG), m_YDir(BallDirectionY::NEUT), m_Speed(3.f)
 {
 	m_Circle.setRadius(WindowManager::PercentsToPixelsY(0.5f));
 	m_Circle.setOrigin(m_Circle.getRadius(), m_Circle.getRadius());
@@ -30,6 +30,8 @@ auto Ball::Update() -> void
 		Pong::GiveLeftPlayerAPoint();
 		Pong::Reset(true);
 	}
+
+	m_Speed = m_Speed > 6.5f ? 6.5f : m_Speed;
 
 	switch (m_XDir)
 	{

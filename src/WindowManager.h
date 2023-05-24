@@ -13,17 +13,17 @@ public:
     WindowManager(WindowManager const&) = delete;
     void operator=(WindowManager const&) = delete;
 
-    inline static auto Create(int width, int height) -> void { GetWindow().create(sf::VideoMode(width, height), "Pong2D"); GetWindow().setVerticalSyncEnabled(true); }
-    inline static auto CloseWindow() -> void { GetWindow().close(); }
-    inline static auto DisplayWindow() -> void { GetWindow().display(); }
-    inline static auto ClearWindow() -> void { GetWindow().clear(sf::Color::Black); }
-    inline static auto PercentsToPixelsX(float percents) -> float { return GetWindow().getSize().x * percents / 100.f; }
-    inline static auto PercentsToPixelsY(float percents) -> float { return GetWindow().getSize().y * percents / 100.f; }
-    inline static auto MapPixelsToCoords(float x, float y) -> sf::Vector2f { return GetWindow().mapPixelToCoords({ static_cast<int>(x), static_cast<int>(y) }); }
-    inline static auto MapXPixelsToCoords(float x) -> float { return GetWindow().mapPixelToCoords({ static_cast<int>(x), 0 }).x; }
-    inline static auto MapYPixelsToCoords(float y) -> float { return GetWindow().mapPixelToCoords({ 0, static_cast<int>(y) }).y; }
+    static auto Create(int width, int height) -> void { GetWindow().create(sf::VideoMode(width, height), "Pong2D"); GetWindow().setVerticalSyncEnabled(true); }
+    static auto CloseWindow() -> void { GetWindow().close(); }
+    static auto DisplayWindow() -> void { GetWindow().display(); }
+    static auto ClearWindow() -> void { GetWindow().clear(sf::Color::Black); }
+    static auto PercentsToPixelsX(float percents) -> float { return GetWindow().getSize().x * percents / 100.f; }
+    static auto PercentsToPixelsY(float percents) -> float { return GetWindow().getSize().y * percents / 100.f; }
+    static auto MapPixelsToCoords(float x, float y) -> sf::Vector2f { return GetWindow().mapPixelToCoords({ static_cast<int>(x), static_cast<int>(y) }); }
+    static auto MapXPixelsToCoords(float x) -> float { return GetWindow().mapPixelToCoords({ static_cast<int>(x), 0 }).x; }
+    static auto MapYPixelsToCoords(float y) -> float { return GetWindow().mapPixelToCoords({ 0, static_cast<int>(y) }).y; }
 
-    inline static auto GetInstance() -> WindowManager& { static WindowManager instance; return instance; }
-    inline static auto IsWindowOpen() -> bool { return GetWindow().isOpen(); }
-    inline static auto GetWindow() -> sf::RenderWindow& { return GetInstance().m_Window; }
+    static auto GetInstance() -> WindowManager& { static WindowManager instance; return instance; }
+    static auto IsWindowOpen() -> bool { return GetWindow().isOpen(); }
+    static auto GetWindow() -> sf::RenderWindow& { return GetInstance().m_Window; }
 };

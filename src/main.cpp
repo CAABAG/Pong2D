@@ -3,6 +3,5 @@
 int main()
 {	
 	Pong::Run();
-
 	return 0;
 }

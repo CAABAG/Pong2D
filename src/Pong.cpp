@@ -2,9 +2,9 @@
 
 auto Pong::PlayGame() -> void
 {
-	Paddle	rightPaddle(PaddleType::PLAYER);
-	Paddle	leftPaddle(PaddleType::AI);
-	Ball	ball;
+	Paddle rightPaddle(PaddleType::PLAYER);
+	Paddle leftPaddle(PaddleType::AI);
+	Ball ball;
 
 	sf::Font consolas;
 	consolas.loadFromFile("../src/Consolas.ttf");
@@ -23,7 +23,6 @@ auto Pong::PlayGame() -> void
 	leftPlayerScore.setFillColor(sf::Color::White);
 	leftPlayerScore.setStyle(sf::Text::Bold);
 	leftPlayerScore.setPosition(WindowManager::MapPixelsToCoords(WindowManager::PercentsToPixelsX(45.f), WindowManager::PercentsToPixelsY(5.f)));
-	
 
 	while (!GetReset())
 	{

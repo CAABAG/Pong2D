@@ -21,8 +21,8 @@ class Ball
 {
 private:
 	sf::CircleShape	m_Circle;
-	BallDirectionX	m_XDir;
-	BallDirectionY	m_YDir;
+	BallDirectionX  m_XDir;
+	BallDirectionY  m_YDir;
 
 	float m_Speed;
 public:

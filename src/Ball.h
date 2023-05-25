@@ -19,12 +19,6 @@ enum class BallDirectionX
 
 class Ball
 {
-private:
-    sf::CircleShape m_Circle;
-    BallDirectionX  m_XDir;
-    BallDirectionY  m_YDir;
-
-    float m_Speed;
 public:
     Ball();
 
@@ -39,4 +33,10 @@ public:
     sf::Vector2f GetPosition() { return m_Circle.getPosition(); }
     sf::CircleShape GetCircle() { return m_Circle; }
     BallDirectionY& GetYDir() { return m_YDir; }
+
+private:
+    sf::CircleShape m_Circle;
+    BallDirectionX  m_XDir;
+    BallDirectionY  m_YDir;
+    float m_Speed;
 };

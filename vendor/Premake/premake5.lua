@@ -18,7 +18,7 @@ project "Pong2D"
 		"../../src/*.h"
 	}
 	
-	includedirs {"../SFML/Windows/include"}
+	includedirs {"../SFML/include"}
 	
 	libdirs {"../SFML/Windows/lib"}
 	

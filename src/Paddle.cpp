@@ -18,7 +18,7 @@ Paddle::Paddle(const PaddleType type) : m_TypeOfPaddle(type), m_BaseSpeed(6.f), 
     }
 }
 
-auto Paddle::Update(Ball& ball, const sf::Event& event) -> void
+void Paddle::Update(Ball& ball, const sf::Event& event)
 {
     if (WindowManager::MapXPixelsToCoords(m_Rectangle.getPosition().x) + m_Rectangle.getSize().x / 2 > WindowManager::MapXPixelsToCoords(ball.GetCircle().getPosition().x) &&
         WindowManager::MapXPixelsToCoords(m_Rectangle.getPosition().x) - m_Rectangle.getSize().x / 2 < WindowManager::MapXPixelsToCoords(ball.GetCircle().getPosition().x) &&

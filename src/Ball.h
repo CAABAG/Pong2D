@@ -28,15 +28,15 @@ private:
 public:
     Ball();
 
-    auto Update() -> void;
+    void Update();
 
-    auto Render() -> void { WindowManager::GetWindow().draw(m_Circle); }
+    void Render() { WindowManager::GetWindow().draw(m_Circle); }
 
-    auto SetXDir(const BallDirectionX newDir) -> void { m_XDir = newDir; }
-    auto SetYDir(const BallDirectionY newDir) -> void { m_YDir = newDir; }
-    auto IncreaseSpeed() -> void { m_Speed += m_Speed * 0.1f; }
+    void SetXDir(const BallDirectionX newDir) { m_XDir = newDir; }
+    void SetYDir(const BallDirectionY newDir) { m_YDir = newDir; }
+    void IncreaseSpeed() { m_Speed += m_Speed * 0.1f; }
 
-    auto GetPosition() -> sf::Vector2f { return m_Circle.getPosition(); }
-    auto GetCircle() -> sf::CircleShape { return m_Circle; }
-    auto GetYDir() -> BallDirectionY& { return m_YDir; }
+    sf::Vector2f GetPosition() { return m_Circle.getPosition(); }
+    sf::CircleShape GetCircle() { return m_Circle; }
+    BallDirectionY& GetYDir() { return m_YDir; }
 };

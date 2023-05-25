@@ -13,17 +13,17 @@ public:
     WindowManager(WindowManager const&) = delete;
     void operator=(WindowManager const&) = delete;
 
-    static auto Create(int width, int height) -> void { GetWindow().create(sf::VideoMode(width, height), "Pong2D"); GetWindow().setVerticalSyncEnabled(true); }
-    static auto CloseWindow() -> void { GetWindow().close(); }
-    static auto DisplayWindow() -> void { GetWindow().display(); }
-    static auto ClearWindow() -> void { GetWindow().clear(sf::Color::Black); }
-    static auto PercentsToPixelsX(float percents) -> float { return GetWindow().getSize().x * percents / 100.f; }
-    static auto PercentsToPixelsY(float percents) -> float { return GetWindow().getSize().y * percents / 100.f; }
-    static auto MapPixelsToCoords(float x, float y) -> sf::Vector2f { return GetWindow().mapPixelToCoords({ static_cast<int>(x), static_cast<int>(y) }); }
-    static auto MapXPixelsToCoords(float x) -> float { return GetWindow().mapPixelToCoords({ static_cast<int>(x), 0 }).x; }
-    static auto MapYPixelsToCoords(float y) -> float { return GetWindow().mapPixelToCoords({ 0, static_cast<int>(y) }).y; }
+    static void Create(int width, int height) { GetWindow().create(sf::VideoMode(width, height), "Pong2D"); GetWindow().setVerticalSyncEnabled(true); }
+    static void CloseWindow() { GetWindow().close(); }
+    static void DisplayWindow() { GetWindow().display(); }
+    static void ClearWindow() { GetWindow().clear(sf::Color::Black); }
+    static float PercentsToPixelsX(float percents) { return GetWindow().getSize().x * percents / 100.f; }
+    static float PercentsToPixelsY(float percents) { return GetWindow().getSize().y * percents / 100.f; }
+    static sf::Vector2f MapPixelsToCoords(float x, float y) { return GetWindow().mapPixelToCoords({ static_cast<int>(x), static_cast<int>(y) }); }
+    static float MapXPixelsToCoords(float x) { return GetWindow().mapPixelToCoords({ static_cast<int>(x), 0 }).x; }
+    static float MapYPixelsToCoords(float y) { return GetWindow().mapPixelToCoords({ 0, static_cast<int>(y) }).y; }
 
-    static auto GetInstance() -> WindowManager& { static WindowManager instance; return instance; }
-    static auto IsWindowOpen() -> bool { return GetWindow().isOpen(); }
-    static auto GetWindow() -> sf::RenderWindow& { return GetInstance().m_Window; }
+    static WindowManager& GetInstance() { static WindowManager instance; return instance; }
+    static bool IsWindowOpen() { return GetWindow().isOpen(); }
+    static sf::RenderWindow& GetWindow() { return GetInstance().m_Window; }
 };

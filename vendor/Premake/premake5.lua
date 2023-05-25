@@ -18,9 +18,9 @@ project "Pong2D"
 		"../../src/*.h"
 	}
 	
-	includedirs {"../SFML/include"}
+	includedirs {"../SFML/Windows/include"}
 	
-	libdirs {"../SFML/lib"}
+	libdirs {"../SFML/Windows/lib"}
 	
 	links {"opengl32.lib", "freetype.lib", "winmm.lib", "gdi32.lib", "flac.lib", "vorbisenc.lib",
 	"vorbisfile.lib", "ogg.lib", "ws2_32.lib"}

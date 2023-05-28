@@ -1,6 +1,6 @@
 #include "Pong.h"
 
-auto Pong::PlayGame() -> void
+void Pong::PlayGame()
 {
     Paddle rightPaddle(PaddleType::PLAYER);
     Paddle leftPaddle(PaddleType::AI);
@@ -69,7 +69,7 @@ auto Pong::PlayGame() -> void
     }
 }
 
-auto Pong::Run() -> void
+void Pong::Run()
 {
     WindowManager::Create(800, 600);
 

@@ -7,7 +7,7 @@ Ball::Ball() : m_XDir(BallDirectionX::NEG), m_YDir(BallDirectionY::NEUT), m_Spee
     m_Circle.setPosition(WindowManager::MapPixelsToCoords(WindowManager::PercentsToPixelsX(50.f), WindowManager::PercentsToPixelsY(50.f)));
 }
 
-auto Ball::Update() -> void
+void Ball::Update()
 {
     if (0.f > WindowManager::MapYPixelsToCoords(m_Circle.getPosition().y - m_Circle.getRadius()))
     {

@@ -22,6 +22,6 @@ private:
 public:
     Paddle(const PaddleType type);
 
-    auto Update(Ball& ball, const sf::Event& event) -> void;
-    auto Render() -> void { WindowManager::GetWindow().draw(m_Rectangle); }
+    void Update(Ball& ball, const sf::Event& event);
+    void Render() { WindowManager::GetWindow().draw(m_Rectangle); }
 };

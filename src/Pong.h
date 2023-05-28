@@ -7,14 +7,6 @@
 
 class Pong
 {
-private:
-    int m_RightPlayerPoints;
-    int m_LeftPlayerPoints;
-    bool m_Reset;
-    bool m_Keyboard;
-
-    Pong() : m_RightPlayerPoints(0), m_LeftPlayerPoints(0), m_Reset(false), m_Keyboard(true) {}
-    static void PlayGame();
 public:
     Pong(Pong const&) = delete;
     void operator=(Pong const&) = delete;
@@ -31,4 +23,13 @@ public:
     static int GetLeftPlayerPoints() { return GetInstance().m_LeftPlayerPoints; }
     static bool GetReset() { return GetInstance().m_Reset; }
     static bool GetKeyboard() { return GetInstance().m_Keyboard; }
+
+private:
+    Pong() : m_RightPlayerPoints(0), m_LeftPlayerPoints(0), m_Reset(false), m_Keyboard(true) {}
+    static void PlayGame();
+
+    int m_RightPlayerPoints;
+    int m_LeftPlayerPoints;
+    bool m_Reset;
+    bool m_Keyboard;
 };

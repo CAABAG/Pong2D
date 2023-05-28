@@ -4,11 +4,6 @@
 
 class WindowManager
 {
-private:
-    sf::RenderWindow m_Window;
-    sf::Event m_Event;
-
-    WindowManager() {}
 public:
     WindowManager(WindowManager const&) = delete;
     void operator=(WindowManager const&) = delete;
@@ -26,4 +21,10 @@ public:
     static WindowManager& GetInstance() { static WindowManager instance; return instance; }
     static bool IsWindowOpen() { return GetWindow().isOpen(); }
     static sf::RenderWindow& GetWindow() { return GetInstance().m_Window; }
+
+private:
+    WindowManager() {}
+
+    sf::RenderWindow m_Window;
+    sf::Event m_Event;
 };

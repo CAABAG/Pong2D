@@ -30,13 +30,13 @@ public:
 
     auto Update() -> void;
 
-    inline auto Render() -> void { WindowManager::GetWindow().draw(m_Circle); }
+    auto Render() -> void { WindowManager::GetWindow().draw(m_Circle); }
 
-    inline auto SetXDir(const BallDirectionX newDir) -> void { m_XDir = newDir; }
-    inline auto SetYDir(const BallDirectionY newDir) -> void { m_YDir = newDir; }
-    inline auto IncreaseSpeed() -> void { m_Speed += m_Speed * 0.1f; }
+    auto SetXDir(const BallDirectionX newDir) -> void { m_XDir = newDir; }
+    auto SetYDir(const BallDirectionY newDir) -> void { m_YDir = newDir; }
+    auto IncreaseSpeed() -> void { m_Speed += m_Speed * 0.1f; }
 
-    inline auto GetPosition() -> sf::Vector2f { return m_Circle.getPosition(); }
-    inline auto GetCircle() -> sf::CircleShape { return m_Circle; }
-    inline auto GetYDir() -> BallDirectionY& { return m_YDir; }
+    auto GetPosition() -> sf::Vector2f { return m_Circle.getPosition(); }
+    auto GetCircle() -> sf::CircleShape { return m_Circle; }
+    auto GetYDir() -> BallDirectionY& { return m_YDir; }
 };

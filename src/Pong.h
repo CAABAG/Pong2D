@@ -21,14 +21,14 @@ public:
 
     static auto Run() -> void;
 
-	inline static auto GiveRightPlayerAPoint() -> void { GetInstance().m_RightPlayerPoints++; }
-	inline static auto GiveLeftPlayerAPoint() -> void { GetInstance().m_LeftPlayerPoints++; }
-	inline static auto Reset(const bool state) -> void { GetInstance().m_Reset = state; }
-	inline static auto SetKeyboard(const bool state) -> void { GetInstance().m_Keyboard = state; }
+    static auto GiveRightPlayerAPoint() -> void { GetInstance().m_RightPlayerPoints++; }
+    static auto GiveLeftPlayerAPoint() -> void { GetInstance().m_LeftPlayerPoints++; }
+    static auto Reset(const bool state) -> void { GetInstance().m_Reset = state; }
+    static auto SetKeyboard(const bool state) -> void { GetInstance().m_Keyboard = state; }
 
-	inline static auto GetInstance() -> Pong& { static Pong instance; return instance; }
-	inline static auto GetRightPlayerPoints() -> int { return GetInstance().m_RightPlayerPoints; }
-	inline static auto GetLeftPlayerPoints() -> int { return GetInstance().m_LeftPlayerPoints; }
-	inline static auto GetReset() -> bool { return GetInstance().m_Reset; }
-	inline static auto GetKeyboard() -> bool { return GetInstance().m_Keyboard; }
+    static auto GetInstance() -> Pong& { static Pong instance; return instance; }
+    static auto GetRightPlayerPoints() -> int { return GetInstance().m_RightPlayerPoints; }
+    static auto GetLeftPlayerPoints() -> int { return GetInstance().m_LeftPlayerPoints; }
+    static auto GetReset() -> bool { return GetInstance().m_Reset; }
+    static auto GetKeyboard() -> bool { return GetInstance().m_Keyboard; }
 };

@@ -6,7 +6,7 @@ class WindowManager
 {
 private:
 	sf::RenderWindow										m_Window;
-	sf::Event												m_Event;
+    sf::Event												m_Event;
 
 	WindowManager()											{}
 public:
@@ -14,7 +14,6 @@ public:
 	void operator=(WindowManager const&)					= delete;
 
 	inline static auto Create(int width, int height)		-> void { GetWindow().create(sf::VideoMode(width, height), "Pong2D"); GetWindow().setVerticalSyncEnabled(true); }
-	inline static auto PollEvent()							-> bool { return GetWindow().pollEvent(GetEvent()); }
 	inline static auto CloseWindow()						-> void { GetWindow().close(); }
 	inline static auto DisplayWindow()						-> void { GetWindow().display(); }
 	inline static auto ClearWindow()						-> void { GetWindow().clear(sf::Color::Black); }
@@ -27,5 +26,4 @@ public:
 	inline static auto GetInstance()						-> WindowManager& { static WindowManager instance; return instance; }
 	inline static auto IsWindowOpen()						-> bool { return GetWindow().isOpen(); }
 	inline static auto GetWindow()							-> sf::RenderWindow& { return GetInstance().m_Window; }
-	inline static auto GetEvent()							-> sf::Event& { return GetInstance().m_Event; }
 };

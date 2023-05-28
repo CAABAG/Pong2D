@@ -27,16 +27,17 @@ auto Pong::PlayGame() -> void
 
 	while (!GetReset())
 	{
-		while (WindowManager::PollEvent())
+        sf::Event event;
+		while (WindowManager::GetWindow().pollEvent(event))
 		{
-			switch (WindowManager::GetEvent().type)
+			switch (event.type)
 			{
 			case sf::Event::EventType::Closed:
 				WindowManager::CloseWindow();
 				Reset(true);
 				break;
 			case sf::Event::EventType::KeyPressed:
-				if (WindowManager::GetEvent().key.code == sf::Keyboard::Escape)
+				if (event.key.code == sf::Keyboard::Escape)
 				{
 					WindowManager::CloseWindow();
 					Reset(true);
@@ -50,8 +51,8 @@ auto Pong::PlayGame() -> void
 			}
 		}
 
-		rightPaddle.Update(ball);
-		leftPaddle.Update(ball);
+		rightPaddle.Update(ball, event);
+		leftPaddle.Update(ball, event);
 		ball.Update();
 
 		rightPlayerScore.setString(std::to_string(GetRightPlayerPoints()));

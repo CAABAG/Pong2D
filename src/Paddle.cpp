@@ -18,7 +18,7 @@ Paddle::Paddle(const PaddleType type) : m_TypeOfPaddle(type), m_BaseSpeed(6.f), 
 	}
 }
 
-auto Paddle::Update(Ball& ball) -> void
+auto Paddle::Update(Ball& ball, const sf::Event& event) -> void
 {
 	if (WindowManager::MapXPixelsToCoords(m_Rectangle.getPosition().x) + m_Rectangle.getSize().x / 2 > WindowManager::MapXPixelsToCoords(ball.GetCircle().getPosition().x) &&
 		WindowManager::MapXPixelsToCoords(m_Rectangle.getPosition().x) - m_Rectangle.getSize().x / 2 < WindowManager::MapXPixelsToCoords(ball.GetCircle().getPosition().x) &&
@@ -48,9 +48,9 @@ auto Paddle::Update(Ball& ball) -> void
 	case PaddleType::PLAYER:
 		if (Pong::GetKeyboard())
 		{
-			if (WindowManager::GetEvent().type == sf::Event::EventType::KeyPressed)
+            if (event.type == sf::Event::EventType::KeyPressed)
 			{
-				switch (WindowManager::GetEvent().key.code)
+                switch (event.key.code)
 				{
 				case sf::Keyboard::Up:
 					m_Rectangle.move(0.f, -m_BaseSpeed);

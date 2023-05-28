@@ -8,18 +8,18 @@
 class Pong
 {
 private:
-	int m_RightPlayerPoints;
-	int m_LeftPlayerPoints;
-	bool m_Reset;
-	bool m_Keyboard;
+    int m_RightPlayerPoints;
+    int m_LeftPlayerPoints;
+    bool m_Reset;
+    bool m_Keyboard;
 
-	Pong() : m_RightPlayerPoints(0), m_LeftPlayerPoints(0), m_Reset(false), m_Keyboard(true) {}
-	static auto PlayGame() -> void;
+    Pong() : m_RightPlayerPoints(0), m_LeftPlayerPoints(0), m_Reset(false), m_Keyboard(true) {}
+    static auto PlayGame() -> void;
 public:
-	Pong(Pong const&) = delete;
-	void operator=(Pong const&) = delete;
+    Pong(Pong const&) = delete;
+    void operator=(Pong const&) = delete;
 
-	static auto Run() -> void;
+    static auto Run() -> void;
 
 	inline static auto GiveRightPlayerAPoint() -> void { GetInstance().m_RightPlayerPoints++; }
 	inline static auto GiveLeftPlayerAPoint() -> void { GetInstance().m_LeftPlayerPoints++; }

@@ -2,6 +2,6 @@
 
 int main()
 {	
-	Pong::Run();
-	return 0;
+    Pong::Run();
+    return 0;
 }

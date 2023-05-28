@@ -20,7 +20,7 @@ enum class BallDirectionX
 class Ball
 {
 private:
-    sf::CircleShape	m_Circle;
+    sf::CircleShape m_Circle;
     BallDirectionX  m_XDir;
     BallDirectionY  m_YDir;
 

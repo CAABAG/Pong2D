@@ -1,28 +1,28 @@
 #include "Pong.h"
 
+void Pong::InitializeScoreLabel(const sf::Font& font, sf::Text& label, double xCoord, double yCoord)
+{
+    label.setFont(font);
+    label.setCharacterSize(24);
+    label.setFillColor(sf::Color::White);
+    label.setStyle(sf::Text::Bold);
+    label.setPosition(WindowManager::MapPixelsToCoords(WindowManager::PercentsToPixelsX(xCoord), WindowManager::PercentsToPixelsY(yCoord)));
+}
+
 void Pong::PlayGame()
 {
     Paddle rightPaddle(PaddleType::PLAYER);
     Paddle leftPaddle(PaddleType::AI);
     Ball ball;
 
-    sf::Font consolas;
-    consolas.loadFromFile("../src/Consolas.ttf");
-
     sf::Text rightPlayerScore;
     sf::Text leftPlayerScore;
 
-    rightPlayerScore.setFont(consolas);
-    rightPlayerScore.setCharacterSize(24);
-    rightPlayerScore.setFillColor(sf::Color::White);
-    rightPlayerScore.setStyle(sf::Text::Bold);
-    rightPlayerScore.setPosition(WindowManager::MapPixelsToCoords(WindowManager::PercentsToPixelsX(55.f), WindowManager::PercentsToPixelsY(5.f)));
+    sf::Font consolas;
+    consolas.loadFromFile("../src/Consolas.ttf");
 
-    leftPlayerScore.setFont(consolas);
-    leftPlayerScore.setCharacterSize(24);
-    leftPlayerScore.setFillColor(sf::Color::White);
-    leftPlayerScore.setStyle(sf::Text::Bold);
-    leftPlayerScore.setPosition(WindowManager::MapPixelsToCoords(WindowManager::PercentsToPixelsX(45.f), WindowManager::PercentsToPixelsY(5.f)));
+    Pong::InitializeScoreLabel(consolas, rightPlayerScore, 55., 5.);
+    Pong::InitializeScoreLabel(consolas, leftPlayerScore, 45., 5.);
 
     while (!GetReset())
     {

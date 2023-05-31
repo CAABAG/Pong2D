@@ -27,6 +27,7 @@ public:
 private:
     Pong() : m_RightPlayerPoints(0), m_LeftPlayerPoints(0), m_Reset(false), m_Keyboard(true) {}
     static void PlayGame();
+    static void InitializeScoreLabel(const sf::Font& font, sf::Text& label, double xCoord, double yCoord);
 
     int m_RightPlayerPoints;
     int m_LeftPlayerPoints;
